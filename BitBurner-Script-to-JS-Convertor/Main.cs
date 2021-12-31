@@ -341,7 +341,7 @@ namespace Bitburner_JS_Converter
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("rm\\((.*)\\)", RegexOptions.IgnoreCase);
-            cleanString = regex.Replace(rtb_ModedFile.Text, "ns.rm($1)");
+            cleanString = regex.Replace(rtb_ModedFile.Text, "await ns.rm($1)");
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("run\\((.*)\\)", RegexOptions.IgnoreCase);
@@ -409,7 +409,7 @@ namespace Bitburner_JS_Converter
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("wget\\((.*)\\)", RegexOptions.IgnoreCase);
-            cleanString = regex.Replace(rtb_ModedFile.Text, "ns.wget($1)");
+            cleanString = regex.Replace(rtb_ModedFile.Text, "await ns.wget($1)");
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("write\\((.*)\\)", RegexOptions.IgnoreCase);
