@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ClassicAssist Macro Converter")]
-[assembly: AssemblyDescription("Converts UOSteam macros to ClassicAssist format")]
+[assembly: AssemblyTitle("Bitburner Script-to-JS Convertor")]
+[assembly: AssemblyDescription("Converts .script to .js format")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("https://github.com/TheDroidYourLookingFor")]
-[assembly: AssemblyProduct("ClassicAssist Macro Converter")]
+[assembly: AssemblyProduct("Bitburner Script-to-JS Convertor")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

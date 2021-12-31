@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ClassicAssist_Macro_Converter
+namespace Bitburner_JS_Converter
 {
     static class Program
     {

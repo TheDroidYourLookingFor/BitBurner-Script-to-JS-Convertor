@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace ClassicAssist_Macro_Converter
+namespace Bitburner_JS_Converter
 {
     public partial class AboutBox : Form
     {

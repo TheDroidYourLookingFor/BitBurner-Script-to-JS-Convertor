@@ -3,7 +3,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace ClassicAssist_Macro_Converter
+namespace Bitburner_JS_Converter
 {
     public partial class Main : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace ClassicAssist_Macro_Converter
+﻿namespace Bitburner_JS_Converter
 {
     partial class Main
     {
