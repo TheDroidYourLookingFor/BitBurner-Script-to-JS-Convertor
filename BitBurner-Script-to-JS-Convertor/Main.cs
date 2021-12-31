@@ -253,7 +253,7 @@ namespace Bitburner_JS_Converter
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("grow\\((.*)\\)", RegexOptions.IgnoreCase);
-            cleanString = regex.Replace(rtb_ModedFile.Text, "ns.grow($1)");
+            cleanString = regex.Replace(rtb_ModedFile.Text, "await ns.grow($1)");
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("growthAnalyze\\((.*)\\)", RegexOptions.IgnoreCase);
@@ -265,7 +265,7 @@ namespace Bitburner_JS_Converter
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("hack\\((.*)\\)", RegexOptions.IgnoreCase);
-            cleanString = regex.Replace(rtb_ModedFile.Text, "ns.hack($1)");
+            cleanString = regex.Replace(rtb_ModedFile.Text, "await ns.hack($1)");
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("hackAnalyze\\((.*)\\)", RegexOptions.IgnoreCase);
@@ -333,7 +333,7 @@ namespace Bitburner_JS_Converter
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("read\\((.*)\\)", RegexOptions.IgnoreCase);
-            cleanString = regex.Replace(rtb_ModedFile.Text, "ns.read($1)");
+            cleanString = regex.Replace(rtb_ModedFile.Text, "await ns.read($1)");
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("readPort\\((.*)\\)", RegexOptions.IgnoreCase);
@@ -401,7 +401,7 @@ namespace Bitburner_JS_Converter
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("weaken\\((.*)\\)", RegexOptions.IgnoreCase);
-            cleanString = regex.Replace(rtb_ModedFile.Text, "ns.weaken($1)");
+            cleanString = regex.Replace(rtb_ModedFile.Text, "await ns.weaken($1)");
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("weakenAnalyze\\((.*)\\)", RegexOptions.IgnoreCase);
@@ -413,7 +413,7 @@ namespace Bitburner_JS_Converter
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("write\\((.*)\\)", RegexOptions.IgnoreCase);
-            cleanString = regex.Replace(rtb_ModedFile.Text, "ns.write($1)");
+            cleanString = regex.Replace(rtb_ModedFile.Text, "await ns.write($1)");
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("writePort\\((.*)\\)", RegexOptions.IgnoreCase);
