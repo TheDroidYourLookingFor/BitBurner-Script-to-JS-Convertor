@@ -125,5 +125,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jsbeautifier\Jsbeautifier.csproj">
+      <Project>{d0d26725-9537-41b2-922a-f16660749427}</Project>
+      <Name>Jsbeautifier</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

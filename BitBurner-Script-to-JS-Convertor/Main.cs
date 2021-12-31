@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jsbeautifier;
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -7,9 +8,21 @@ namespace Bitburner_JS_Converter
 {
     public partial class Main : Form
     {
+        private Beautifier beautifier;
+
         public Main()
         {
             InitializeComponent();
+            beautifier = new Beautifier();
+
+            beautifier.Opts.IndentSize = 1;
+            beautifier.Opts.IndentChar = '\t';
+            beautifier.Opts.PreserveNewlines = true;
+            beautifier.Opts.JslintHappy = false;
+            beautifier.Opts.KeepArrayIndentation = false;
+            beautifier.Opts.BraceStyle = BraceStyle.Collapse;
+            beautifier.Flags.IndentationLevel = 0;
+            beautifier.Opts.BreakChainedMethods = false;
         }
 
         public void OpenFile()
@@ -45,19 +58,9 @@ namespace Bitburner_JS_Converter
 
         public void ParseText()
         {
-            rtb_ModedFile.Text = rtb_CurrentFile.Text.Replace("\n", Environment.NewLine + "\t");
-            rtb_ModedFile.Text = "\t" + rtb_ModedFile.Text;
-            rtb_ModedFile.Text = "//** @param {NS} ns **//"
-                + "\r\n"
-                + "export async function main(ns) {"
-                + "\r\n"
-                + "" + rtb_ModedFile.Text.Replace("\n", Environment.NewLine + "\t")
-                + "\r\n"
-                + "}";
-
             //scp(script, source, destination)
             Regex regex = new Regex("scp\\((.*)\\)", RegexOptions.IgnoreCase);
-            string cleanString = regex.Replace(rtb_ModedFile.Text, "await ns.scp($1)");
+            string cleanString = regex.Replace(rtb_CurrentFile.Text, "await ns.scp($1)");
             rtb_ModedFile.Text = cleanString;
 
             regex = new Regex("sleep\\((.*)\\)", RegexOptions.IgnoreCase);
@@ -423,6 +426,26 @@ namespace Bitburner_JS_Converter
             regex = new Regex("fileExists\\((.*)\\)", RegexOptions.IgnoreCase);
             cleanString = regex.Replace(rtb_ModedFile.Text, "ns.fileExists($1)");
             rtb_ModedFile.Text = cleanString;
+
+            rtb_ModedFile.Text = beautifier.Beautify(rtb_ModedFile.Text);
+
+            rtb_ModedFile.Text = rtb_ModedFile.Text.Replace("\n", Environment.NewLine);
+            rtb_ModedFile.Text = "\t" + rtb_ModedFile.Text;
+            rtb_ModedFile.Text = "//** @param {NS} ns **//"
+                + "\r\n"
+                + "export async function main(ns) {"
+                + "\r\n"
+                + "" + beautifier.Beautify(rtb_ModedFile.Text)
+                + "\r\n"
+                + "}";
+
+            //rtb_ModedFile.Text = "//** @param {NS} ns **//"
+            //    + "\r\n"
+            //    + "export async function main(ns) {"
+            //    + "\r\n\t"
+            //    + "" + beautifier.Beautify(rtb_ModedFile.Text)
+            //    + "\r\n"
+            //    + "}";
         }
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
